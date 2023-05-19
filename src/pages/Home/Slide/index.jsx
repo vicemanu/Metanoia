@@ -38,7 +38,7 @@ export default function Slide() {
       } else if( n == 2){
         setImg('https://cdn.pixabay.com/photo/2023/03/28/19/55/lake-7884049_960_720.jpg')
         setTitle('Titulo do Artigo 2')
-        setText('animi quas maiores ducimus quo natus aliquid,Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat eius omnis tenetur voluptatem velit necessitatibus, animi quas maiores ducimus quo natus aliquid, nisi id incidunt eveniet, porro laborum laboriosam facere?')
+        setText('animi quas maiores ducimus quo animi quas maiores ducimus quo animi quas maiores ducimus quo natus aliquid,Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat eius omnis tenetur voluptatem velit necessitatibus, animi quas maiores ducimus quo natus aliquid, nisi id incidunt eveniet, porro laborum laboriosam facere?')
         setLink('')
       } else if(n == 3) {
         setImg('https://cdn.pixabay.com/photo/2023/04/14/17/18/flower-7925599_640.jpg')
