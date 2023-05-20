@@ -1,5 +1,4 @@
 
-import Footer from '../../components/Footer'
 import Artigos from '../../components/Artigos'
 import Logo from '../../components/Logo'
 import './artigospage.css'
@@ -27,7 +26,6 @@ export default function Artigospage() {
           </section>
         </main>
         
-    <Footer/>
     </>
   )
 }

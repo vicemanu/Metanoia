@@ -1,5 +1,4 @@
 
-import Footer from '../../components/Footer'
 import Artigos from '../../components/Artigos'
 import './artigo.css'
 import Recomend from '../../components/Recomend'
@@ -28,7 +27,6 @@ export default function Artigo() {
           </section>
         </main>
         
-    <Footer/>
     </>
   )
 }

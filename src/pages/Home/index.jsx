@@ -3,7 +3,6 @@ import Slide from "./Slide"
 
 import './home.css'
 import Artigos from '../../components/Artigos'
-import Footer from '../../components/Footer'
 
 export default function Home() {
 
@@ -12,13 +11,7 @@ export default function Home() {
     <>
     <Header/>
     <Slide/>
-
-    
-    <Artigos title={true}/>
-    <Footer/>
-    
-
-
+    <Artigos title={true}/>    
 
     {/* <div id="artigos">
             <h2>Artigos</h2>

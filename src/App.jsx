@@ -1,16 +1,16 @@
 
 
 import './app.css'
-import Home from './pages/Home'
-import Artigospage from './pages/Artigospage'
-import Artigo from './pages/Artigo'
+import Router from './Router'
+import Footer from './components/Footer'
+import Menu from './components/Menu'
 
 function App() {
   return(
     <>
-    {/* <Home/> */}
-    {/* <Artigospage/> */}
-    <Artigo/>
+      <Menu/>
+      <Router/>
+      <Footer/>
     </>
   )
 }
