@@ -3,15 +3,55 @@ import Slide from "./Slide"
 
 import './home.css'
 import Artigos from '../../components/Artigos'
+import { useEffect, useState } from "react"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../../firebase"
 
 export default function Home() {
 
-    
+    const [posts, setPosts] = useState([])
+
+    useEffect(()=> {
+        async function buscarPost() {
+            const postRef = collection(db, "artigo")
+            await getDocs(postRef)
+            .then((snapshot)=> {
+                let lista = []
+
+                snapshot.forEach((doc) => {
+                    lista.push({
+                        id: doc.id,
+                        title: doc.data().title0,
+                        img: doc.data().img0,
+                        text: doc.data().text01
+                    })
+                })
+
+
+                setPosts(lista)
+            })
+            .catch((error)=> {
+                console.log(error)
+            })
+        }
+        buscarPost()
+    },[])
+
+console.log(posts)
+
+
   return(
     <>
     <Header/>
     <Slide/>
-    <Artigos title={true}/>    
+    
+    {
+        posts.map((e)=> {
+            return(
+                <Artigos key={e.id} link="/" img={e.img} title={e.title} text={e.text} /> 
+            )
+        })
+    }  
 
     {/* <div id="artigos">
             <h2>Artigos</h2>
