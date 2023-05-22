@@ -48,7 +48,7 @@ console.log(posts)
     {
         posts.map((e)=> {
             return(
-                <Artigos key={e.id} link="/" img={e.img} title={e.title} text={e.text} /> 
+                <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
             )
         })
     }  
