@@ -1,20 +1,22 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './slide.css'
 
-export default function Slide() { 
-    
-    const [btn, setBtn] = useState(1);
+export default function Slide(props) { 
 
-    const [img, setImg] = useState('https://i.pinimg.com/originals/d7/b1/12/d7b112f7661e5fcbf91ec6ca058adbe9.jpg');
-    const [title, setTitle] = useState('Titulo do Artigo');
-    const [text, setText] = useState('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat eius omnis tenetur voluptatem velit necessitatibus, animi quas maiores ducimus quo natus aliquid, nisi id incidunt eveniet, porro laborum laboriosam facere?');
+
+
+    
+    const [btn, setBtn] = useState(0);
+    const [img, setImg] = useState('');
+    const [title, setTitle] = useState('');
+    const [text, setText] = useState('');
     const [link, setLink] = useState('');
 
     function somaBtn() {
        let n = btn + 1
-       if(n == 5) {
-        n = 1
+       if(n == 4) {
+        n = 0
        }
       setBtn(n)
       gerarTela(n)
@@ -22,36 +24,21 @@ export default function Slide() {
 
     function subBtn() {
       let n = btn - 1
-      if(n == 0) {
-        n = 4
+      if(n == -1) {
+        n = 3
       }
       setBtn(n)
       gerarTela(n)
     }
 
     function gerarTela(n) {
-      if(n == 1) {
-        setImg('https://i.pinimg.com/originals/d7/b1/12/d7b112f7661e5fcbf91ec6ca058adbe9.jpg')
-        setTitle('Titulo do Artigo 1')
-        setText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat eius omnis tenetur voluptatem velit necessitatibus, animi quas maiores ducimus quo natus aliquid, nisi id incidunt eveniet, porro laborum laboriosam facere?')
-        setLink('')
-      } else if( n == 2){
-        setImg('https://cdn.pixabay.com/photo/2023/03/28/19/55/lake-7884049_960_720.jpg')
-        setTitle('Titulo do Artigo 2')
-        setText('animi quas maiores ducimus quo animi quas maiores ducimus quo animi quas maiores ducimus quo natus aliquid,Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat eius omnis tenetur voluptatem velit necessitatibus, animi quas maiores ducimus quo natus aliquid, nisi id incidunt eveniet, porro laborum laboriosam facere?')
-        setLink('')
-      } else if(n == 3) {
-        setImg('https://cdn.pixabay.com/photo/2023/04/14/17/18/flower-7925599_640.jpg')
-        setTitle('Titulo do Artigo 3')
-        setText('incidunt eveniet, porro laborum laboriosam facere?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat eius omnis tenetur voluptatem velit necessitatibus, animi quas maiores ducimus quo natus aliquid, nisi id incidunt eveniet, porro laborum laboriosam facere?')
-        setLink('')
-      } else if(n == 4) {
-        setImg('https://cdn.pixabay.com/photo/2023/04/20/11/55/village-7939562_960_720.jpg')
-        setTitle('Titulo do Artigo 4')
-        setText('nisi id incidunt eveniet, porro laborum laboriosam facere? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat eius omnis tenetur voluptatem velit necessitatibus, animi quas maiores ducimus quo natus aliquid, nisi id incidunt eveniet, porro laborum laboriosam facere?')
-        setLink('')
-      }
+      let element = props.artigos[n];
+      setImg(element.img);
+      setTitle(element.title);
+      setText(element.text);
+      setLink(element.link)
     }
+    
   
     
 
@@ -60,10 +47,10 @@ export default function Slide() {
           <div style={{backgroundImage: `url(${img})`}} className='slide_home--picture_box'>
 
             <div className='picture_box--btns'>
-              <span className='btn1' style={{backgroundColor: btn == 1 ? 'white': ""}}></span>
-              <span className='btn2' style={{backgroundColor: btn == 2 ? 'white': ""}}></span>
-              <span className='btn3' style={{backgroundColor: btn == 3 ? 'white': ""}}></span>
-              <span className='btn4' style={{backgroundColor: btn == 4 ? 'white': ""}}></span>
+              <span className='btn1' style={{backgroundColor: btn == 0 ? 'white': ""}}></span>
+              <span className='btn2' style={{backgroundColor: btn == 1 ? 'white': ""}}></span>
+              <span className='btn3' style={{backgroundColor: btn == 2 ? 'white': ""}}></span>
+              <span className='btn4' style={{backgroundColor: btn == 3 ? 'white': ""}}></span>
             </div>
 
             <div className='picture_box--box_arrow'>
