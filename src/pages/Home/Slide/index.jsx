@@ -1,17 +1,12 @@
 
 import { useEffect, useState } from 'react'
 import './slide.css'
+import { Link } from 'react-router-dom';
 
 export default function Slide(props) { 
 
 
-
-    
     const [btn, setBtn] = useState(0);
-    const [img, setImg] = useState('');
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
-    const [link, setLink] = useState('');
 
     function somaBtn() {
        let n = btn + 1
@@ -19,7 +14,6 @@ export default function Slide(props) {
         n = 0
        }
       setBtn(n)
-      gerarTela(n)
     }
 
     function subBtn() {
@@ -28,23 +22,15 @@ export default function Slide(props) {
         n = 3
       }
       setBtn(n)
-      gerarTela(n)
     }
 
-    function gerarTela(n) {
-      let element = props.artigos[n];
-      setImg(element.img);
-      setTitle(element.title);
-      setText(element.text);
-      setLink(element.link)
-    }
-    
-  
-    
+    function gerarTela() {
+      let element = props.artigos[btn];
+      
 
-    return (
+      return(
         <section className="home--slide-home">
-          <div style={{backgroundImage: `url(${img})`}} className='slide_home--picture_box'>
+          <div style={{backgroundImage: `url(${element?.img})`}} className='slide_home--picture_box'>
 
             <div className='picture_box--btns'>
               <span className='btn1' style={{backgroundColor: btn == 0 ? 'white': ""}}></span>
@@ -68,10 +54,21 @@ export default function Slide(props) {
             
           </div>
           <div className='slide-home--text_box_slide'>
-            <h2 className='text_box_slide--title'>{title}</h2>
-            <p className='text_box_slide--text'>{text}</p>
-            <a href={link} className='text_box_slide--link'>Ler mais </a>
+            <h2 className='text_box_slide--title'>{element?.title}</h2>
+            <p className='text_box_slide--text'>{element?.text}</p>
+            <Link to={`/artigo/${element?.id}`} className='text_box_slide--link'>Ler mais </Link>
           </div>
         </section>
+      )
+      
+    }
+    
+  
+    
+
+    return (
+        <>
+        {gerarTela()}
+        </>
     )
 }
