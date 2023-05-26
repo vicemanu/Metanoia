@@ -1,46 +1,46 @@
 
 import Artigos from '../../components/Artigos'
+import { useEffect, useState } from 'react'
 import './artigo.css'
 import Recomend from '../../components/Recomend'
 import { useParams } from 'react-router-dom'
 import { db } from '../../firebase'
-import { useEffect, useState } from 'react'
-import { collection, doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc } from 'firebase/firestore'
 
 export default function Artigo() {
 
     const { slug } = useParams()
-    const {art, setArt} = useState('')
+    const [artigo, setArtigo] = useState([])
 
 
     useEffect(()=> {
-      async function artigo() {
-        const postRef = collection( db, "artigo")
-        await getDoc(doc(postRef, slug))
+    async function artigo() {
+
+        const postRef = doc( db, "artigo", slug)
+
+        await getDoc(postRef)
         .then((snapshot)=> {
-          let lista = []
-              
-          lista.push({
-              id: snapshot.id,
-              title: snapshot.data().title0,
-              img: snapshot.data().img0,
-              text: snapshot.data().text01
-          })
+          setArtigo(snapshot.data())
+        })
+        .catch((e)=> {
+            console.log(e)
           
-          })
-          setArt(lista)
-        }
+        })
+      }
 
       artigo()
-    })
+    },[])
 
-    console.log(art)
+  
+
+    console.log(artigo)
+    
   return(
     <>
-      <header className="header--artigo" style={{backgroundImage: 'url(/img/wall1.jpg)'}}> {/** Imagem que vai do artigo */}
+      <header className="header--artigo" style={{backgroundImage: `url(${artigo.img0})`}}> {/** Imagem que vai do artigo */}
             <div className='header__artigo--shadow'></div>
             <div className='header__artigo--title_header'>
-                <h1>{slug}</h1>
+                <h1>{artigo.title0}</h1>
                 <p>descrição</p>
             </div>
         </header>
