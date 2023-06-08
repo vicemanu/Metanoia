@@ -1,5 +1,3 @@
-
-import Artigos from '../../components/Artigos'
 import { useEffect, useState } from 'react'
 import './artigo.css'
 import Recomend from '../../components/Recomend'
@@ -10,7 +8,7 @@ import { doc, getDoc } from 'firebase/firestore'
 export default function Artigo() {
 
     const { slug } = useParams()
-    const [artigo, setArtigo] = useState([])
+    const [artigo, setArtigo] = useState([""])
 
 
     useEffect(()=> {
@@ -20,7 +18,7 @@ export default function Artigo() {
 
         await getDoc(postRef)
         .then((snapshot)=> {
-          setArtigo(snapshot.data())
+          setArtigo(snapshot.data().conteudo)
         })
         .catch((e)=> {
             console.log(e)
@@ -31,10 +29,7 @@ export default function Artigo() {
       artigo()
     },[])
 
-  
-
     console.log(artigo)
-    
   return(
     <>
       <header className="header--artigo" style={{backgroundImage: `url(${artigo.img0})`}}> {/** Imagem que vai do artigo */}
@@ -47,7 +42,24 @@ export default function Artigo() {
         <main className='main--artigo'>
           <section className='main__artigo--todo__artigo'>
             <article className='todo__artigo--conteudo__artigo'>
-
+                {
+                  artigo.conteudo?.map((e, index)=> {
+                    return(
+                      <div>
+                        <h2>{e.titulo}</h2>
+                        {e.paragraph.map((e)=> {
+                          return(
+                            <>
+                             <p>{e}</p> 
+                            <br/>
+                            </>
+                           
+                          )
+                        })}
+                      </div>
+                    )
+                  })
+                }
             </article>
           </section>
           <section className='main__artigo--recomendados'>
