@@ -12,32 +12,23 @@
     height: 360px;
     display: block;
     text-decoration: none;
-    background-size: cover;
-    background-position: center;
+    background: transparent;
     margin: 0 auto;
     position: relative;
     border-radius: 10px 10px 0px 0px;
-    z-index: 1;
-
 }
 
-.slide_home--picture_box::after {
-    content: "";
-    display: block;
-    background-color: rgba(0, 0, 0, 0.233);
-    width: 100%;
-    height: 100%;
-    border-radius: 9px 9px 0px 0px;
-}
 
-.slide_home--picture_box img {
-    position: absolute;
+
+.picture_box--img img {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
     border-radius: 4px;
+    opacity: 0.8;
 }
+
 
 
 .picture_box--btns {
@@ -144,7 +135,7 @@
     }
 
     .slide_home--picture_box:hover img {
-        opacity: 0.8;
+        opacity: 0.7;
     }
 
     .picture_box--btns {
