@@ -18,7 +18,7 @@ export default function Artigo() {
 
         await getDoc(postRef)
         .then((snapshot)=> {
-          setArtigo(snapshot.data().conteudo)
+          setArtigo(snapshot.data())
         })
         .catch((e)=> {
             console.log(e)
@@ -35,7 +35,7 @@ export default function Artigo() {
       <header className="header--artigo" style={{backgroundImage: `url(${artigo.img0})`}}> {/** Imagem que vai do artigo */}
             <div className='header__artigo--shadow'></div>
             <div className='header__artigo--title_header'>
-                <h1>{artigo.title0}</h1>
+                <h1>{artigo.title}</h1>
                 <p>descrição</p>
             </div>
         </header>
@@ -43,16 +43,16 @@ export default function Artigo() {
           <section className='main__artigo--todo__artigo'>
             <article className='todo__artigo--conteudo__artigo'>
                 {
-                  artigo.conteudo?.map((e, index)=> {
+                  artigo.conteudo?.map((e, index1)=> {
                     return(
-                      <div>
-                        <h2>{e.titulo}</h2>
-                        {e.paragraph.map((e)=> {
+                      <div key={index1}>
+                        <h2>{e.title}</h2>
+                        {e.paragraph.map((e, index2)=> {
                           return(
-                            <>
+                            <div key={index2}>
                              <p>{e}</p> 
                             <br/>
-                            </>
+                            </div>
                            
                           )
                         })}
