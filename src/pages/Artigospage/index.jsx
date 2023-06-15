@@ -21,9 +21,9 @@ export default function Artigospage() {
               snapshot.forEach((doc) => {
                   lista.push({
                       id: doc.id,
-                      title: doc.data().title0,
-                      img: doc.data().img0,
-                      text: doc.data().text01
+                      title: doc.data().title,
+                      img: doc.data().img,
+                      text: doc.data().description
                   })
               })
 

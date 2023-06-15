@@ -5,13 +5,12 @@
 .header--artigo {
     width: 100%;
     height: 580px;
-    background: center center no-repeat;
-    background-size: cover;
-    box-shadow: 4px 5px 20px 2px rgba(0, 0, 0, 0.705);
+    box-shadow: 4px 5px 20px 2px rgba(0, 0, 0, 0.589);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .header__artigo--shadow {
     position: absolute;
@@ -19,26 +18,37 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, black 15%, transparent);
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.418), transparent);
+}
+
+.header__artigo--shadow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
 }
 
 .header__artigo--title_header {
     z-index: 1;
-    margin-top: -100px;
     color: white;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .header__artigo--title_header h1 {
-    font-size: 3em;
+    font-size: 1.8em;
 }
 
 .header__artigo--title_header p {
-    font-size: 1.25em;
-    margin-top: 5px;
+    max-width: 820px;
+    margin: 10px auto;
+    font-size: 0.9em;
     font-family: 'Neoncity';
 }
 
@@ -49,13 +59,52 @@
 }
 
 .todo__artigo--conteudo__artigo {
-    width: 90%;
-    background-color: rgba(255, 255, 255, 0.507);
+    width: 98%;
+    background-color: rgba(255, 255, 255, 0.719);
     min-height: 400px;
-    margin: 20px auto 0px;
+    margin: 10px auto 0px;
     border-radius: 10px;
+    padding: 20px 25px;
 }
 
+.conteudo__artigo--box_artigo h2 {
+    margin: 15px 0px 10px;
+    text-align: center;
+}
+
+.box_artigo--citation {
+    margin: 20px auto ;
+    width: 90%;
+    padding: 20px 20px 15px;
+    border-radius: 10px;
+    box-shadow: 4px 3px 1px rgba(0, 0, 0, 0.308);
+    background-color: rgba(255, 255, 255, 0.301);
+}
+.box_artigo--citation p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+.box_artigo--citation p::before, .box_artigo--citation p::after{
+    content: '"';
+}
+
+.box_artigo--citation span {
+    display: block;
+    text-align: right;
+    font-size: 0.85em;
+}
+
+.box_artigo--paragraph {
+    margin-bottom: 20px;
+    text-indent: 10px;
+}
+
+.box_artigo--img {
+    width: 80%;
+    margin: 0px auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
 @media screen and (min-width: 1120px) {
 
 
@@ -73,5 +122,9 @@
         width: 30%;
         border-left: 2px solid rgba(0, 0, 0, 0.253);
         margin-top: 20px;
+    }
+
+    .box_artigo--img {
+        height: 310px;
     }
 }

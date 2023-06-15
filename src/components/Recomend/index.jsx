@@ -19,9 +19,9 @@ export default function Recomend() {
               snapshot.forEach((doc) => {
                   lista.push({
                       id: doc.id,
-                      title: doc.data().title0,
-                      img: doc.data().img0,
-                      text: doc.data().text01
+                      title: doc.data().title,
+                      img: doc.data().img,
+                      text: doc.data().text
                   })
               })
             
@@ -61,8 +61,9 @@ export default function Recomend() {
 
             {posts.map((e, indice) => {
                 return(
-                <Link to={`/artigo/${e.id}`} onClick={Recomend} key={indice}className="container_recomend--box_recomend" style={{backgroundImage:`url(${e.img})`}}>
+                <Link to={`/artigo/${e.id}`} onClick={Recomend} key={indice} className="container_recomend--box_recomend">
                     <div className='box_recomend--Shadow'>
+                        <img className='box_recomend--img' src={e.img} alt="" />
                         <div className="box_recomend--text">
                             <h3>{e.title}</h3>
                         </div>

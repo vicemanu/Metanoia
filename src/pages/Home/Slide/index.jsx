@@ -30,8 +30,8 @@ export default function Slide(props) {
 
       return(
         <section className="home--slide-home">
-          <div style={{backgroundImage: `url(${element?.img})`}} className='slide_home--picture_box'>
-
+          <Link to={`/artigo/${element?.id}`} className='slide_home--picture_box'>
+            <img src={element?.img} alt="" />
             <div className='picture_box--btns'>
               <span className='btn1' style={{backgroundColor: btn == 0 ? 'white': ""}}></span>
               <span className='btn2' style={{backgroundColor: btn == 1 ? 'white': ""}}></span>
@@ -52,7 +52,7 @@ export default function Slide(props) {
                 </button>
             </div>
             
-          </div>
+          </Link>
           <div className='slide-home--text_box_slide'>
             <h2 className='text_box_slide--title'>{element?.title}</h2>
             <p className='text_box_slide--text'>{element?.text}</p>

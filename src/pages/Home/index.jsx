@@ -28,9 +28,9 @@ export default function Home() {
                 snapshot.forEach((doc) => {
                     lista.push({
                         id: doc.id,
-                        title: doc.data().title0,
-                        img: doc.data().img0,
-                        text: doc.data().text01,
+                        title: doc.data().title,
+                        img: doc.data().img,
+                        text: doc.data().description,                  
                         destaque: true /** Resolver o problema do recebimento do destaque */
                     })
                 })
@@ -87,7 +87,7 @@ export default function Home() {
 
                 if(indice <= 8) {
                     return(
-                        <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
+                        <Artigos key={e.id} link={e.id} img={"https://i.pinimg.com/originals/d7/b1/12/d7b112f7661e5fcbf91ec6ca058adbe9.jpg"} title={e.title} text={e.text} /> 
                     )
                 }
                 
