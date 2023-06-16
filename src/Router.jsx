@@ -9,6 +9,7 @@ export default function Router() {
     <Routes>
         <Route path="/" element={<Home/>}  />
         <Route path="/artigos" element={<Artigospage/>}/>
+        <Route path="/artigos/:slug" element={<Artigospage/>}/>
         <Route path="/artigo/:slug" element={<Artigo/>}/>
 
         {/* Criar pagina do 404 não encontrado */}
