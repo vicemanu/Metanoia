@@ -49,13 +49,25 @@
 }
 
 .main__artigospage--todos__artigos {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
     padding: 20px 0px;
     margin-top: 10px;
+    color: white;
+}
+
+.todos__artigos__container--artigos {
+    width: 90%;
+    min-height: 400px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
 }
 
 @media screen and (min-width: 1120px) {
