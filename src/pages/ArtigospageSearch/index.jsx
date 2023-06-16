@@ -64,6 +64,7 @@ export default function ArtigospageSearch() {
 
             <h2>Você pesquisou sobre: {slug}</h2>
             <div className='todos__artigos__container--artigos'>
+              
               {
                 posts.map((e)=> {
                   return(
@@ -71,7 +72,7 @@ export default function ArtigospageSearch() {
                   )
               })
               }
-              
+
             </div>
             
             

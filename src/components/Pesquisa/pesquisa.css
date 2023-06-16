@@ -15,7 +15,7 @@
     border: none;
 }
 
-.form--pesquisa a {
+.form--pesquisa button {
     width: 60px;
     height: 100%;
     display: block;
@@ -29,10 +29,8 @@
     padding: 3px 0px;
 }
 
-.form--pesquisa a:hover {
+.form--pesquisa button:hover {
 
     background-color: #008DC3;
     color: white;
-
-
 }
