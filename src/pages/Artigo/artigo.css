@@ -101,9 +101,11 @@
 
 .box_artigo--img {
     width: 80%;
+    display: block;
     margin: 0px auto;
     border-radius: 4px;
     object-fit: cover;
+    text-align: center;
 }
 @media screen and (min-width: 1120px) {
 
