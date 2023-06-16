@@ -16,6 +16,7 @@ export default function Footer() {
             <div className='footer--box_direitos'>
                 <h4>Direito de Imagem</h4>
                 <a target='_blank' href="https://pixabay.com/">pixabay.com</a>
+                <a target='_blank' href="https://www.svgrepo.com/svg/446392/world-1">https://www.svgrepo.com</a>
             </div>
             <p className='footer--meu_direito'>© <a target='_blank' href="https://victor-mielke-portfolio.vercel.app/">Victor Mielke</a> 2023</p> 
         </footer>
