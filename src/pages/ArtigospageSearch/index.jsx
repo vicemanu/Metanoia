@@ -1,7 +1,7 @@
 
 import Artigos from '../../components/Artigos'
 import Logo from '../../components/Logo'
-import './artigospage.css'
+import './artigospagesearch.css'
 import Recomend from '../../components/Recomend'
 import { useEffect, useState } from "react"
 import { collection, getDocs } from "firebase/firestore"
@@ -30,9 +30,7 @@ export default function ArtigospageSearch() {
               })
 
               let listaFilter = lista.filter((e)=> {
-                if(e.title == slug) {
-                  return e;
-                }
+                return e.title.toLowerCase().includes(slug.toLowerCase())
               })
               
 
@@ -48,6 +46,10 @@ export default function ArtigospageSearch() {
   },[])
 
 
+    function artigosTela() {
+      
+    }
+
   return(
     <>
       <header className="header--artigos">
@@ -62,12 +64,11 @@ export default function ArtigospageSearch() {
             
             {
               posts.map((e)=> {
-                  return(
-                      <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
-                  )
-              })
-          }
-            
+                return(
+                    <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
+                )
+            })
+            }
             
             {/** mapeamento de todos os artigos com um sistema de filtro de pesquisa */}
 
