@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "../../firebase"
 import { useParams } from 'react-router-dom'
+import Header from '../../components/Header'
 
 export default function ArtigospageSearch() {
 
@@ -54,10 +55,7 @@ export default function ArtigospageSearch() {
     <>
       <header className="header--artigos">
             <div className='header__artigos--shadow'></div>
-            <div className='header__artigos--title_header'>
-                <h1><Logo/></h1>
-                <p>Transformando a sua mente em Cristo</p>
-            </div>
+            <Header/>
         </header>
         <main className='main--artigospage'>
           <section className='main__artigospage--todos__artigos'>
