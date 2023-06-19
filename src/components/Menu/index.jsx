@@ -15,6 +15,8 @@ export default function Menu() {
             <nav>
                 <Link to={'/'}>Home</Link>
                 <Link to={'/artigos'}>Artigos</Link>
+                <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/artigo/metanoia'}></Link>
+
             </nav>
             <div className='menu--mobile'>
                 <button onClick={e => setDisplayBlock(!displayBlock)}><i className="bi bi-list"></i></button>
@@ -23,6 +25,7 @@ export default function Menu() {
                     <Logo/>
                     <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/'}>Home</Link>
                     <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/artigos'}>Artigos</Link>
+                    <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/artigo/metanoia'}></Link>
                 </nav>
             </div>
         </menu>

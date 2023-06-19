@@ -71,7 +71,7 @@ export default function Artigo() {
 
                         {/* Retorne todos os paragrafos */}
 
-                        {elem.paragraph.map((e, index)=> {
+                        {elem?.paragraph.map((e, index)=> {
                           return(
                              <p key={index} className='box_artigo--paragraph'>{e}</p> 
                            
@@ -80,7 +80,7 @@ export default function Artigo() {
 
                         {/* Retornar a imagem */}
 
-                        {elem.img.map((e, index)=> {
+                        {elem?.img.map((e, index)=> {
                           return <img className='box_artigo--img' key={index} src={e} alt=""  />
                         })}
                       </div>
