@@ -87,7 +87,7 @@ export default function Home() {
 
                 if(indice <= 8) {
                     return(
-                        <Artigos key={e.id} link={e.id} img={"https://i.pinimg.com/originals/d7/b1/12/d7b112f7661e5fcbf91ec6ca058adbe9.jpg"} title={e.title} text={e.text} /> 
+                        <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
                     )
                 }
                 
