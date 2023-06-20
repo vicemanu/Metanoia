@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Redes from '../Redes'
 import './footer.css'
 
@@ -6,7 +7,10 @@ export default function Footer() {
 
     return (
         <footer className='footer'>
-            <img className='footer--img' src="https://i.pinimg.com/originals/d7/b1/12/d7b112f7661e5fcbf91ec6ca058adbe9.jpg" alt="" />
+            <Link to={'/artigo/wJUXnUO8hUYqH5tpNKs7'} className='footer--img' href="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/metanoia-ad952.appspot.com/o/images%2Fglobe-3441673_1280.jpg?alt=media&token=2bf0ddb3-930d-459a-9ceb-342b91d96d48" alt="" />
+            </Link>
+
             <div className='footer--box_redes'>
                 <h3>Redes Sociais</h3>
                 <div>
