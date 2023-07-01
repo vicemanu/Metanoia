@@ -54,6 +54,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     padding: 20px 0px;
     margin-top: 10px;
     color: white;
@@ -81,6 +82,7 @@
 
     .main__artigospage--todos__artigos {
         width: 70%;
+        flex-direction: row;
     }
 
     .main__artigospage--recomendados {

@@ -12,6 +12,7 @@ export default function Artigospage() {
 
   const [posts, setPosts] = useState([])
 
+  
   useEffect(()=> {
       async function buscarPost() {
           const postRef = collection(db, "artigo")

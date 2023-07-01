@@ -31,7 +31,7 @@ export default function Home() {
                         title: doc.data().title,
                         img: doc.data().img,
                         text: doc.data().description,                  
-                        destaque: true /** Resolver o problema do recebimento do destaque */
+                        destaque: doc.data().destaque
                     })
                 })
 
@@ -39,11 +39,14 @@ export default function Home() {
 
                 // separando artigos em destaque
 
+                
+
                 listaDestaque = lista.filter((e)=> {
                     if(e.destaque) {
                         return e
                     }
                 },)
+
 
                 setDestaque(listaDestaque)
 

@@ -29,12 +29,17 @@ export default function ArtigospageSearch() {
                       text: doc.data().description
                   })
               })
+              if(!slug == "") {
+                let listaFilter = lista.filter((e)=> {
+                  return e.title.toLowerCase().includes(slug.toLowerCase())
+                })
+                setPosts(listaFilter)
+              } else {
+                setPosts(lista)
+              }
+              
 
-              let listaFilter = lista.filter((e)=> {
-                return e.title.toLowerCase().includes(slug.toLowerCase())
-              })
-
-              setPosts(listaFilter)
+              
           
           })
           .catch((error)=> {

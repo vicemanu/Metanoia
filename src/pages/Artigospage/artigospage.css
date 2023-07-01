@@ -1,7 +1,5 @@
 
 
-
-
 .header--artigos {
     width: 100%;
     height: 580px;
@@ -69,6 +67,7 @@
 
     .main__artigospage--todos__artigos {
         width: 70%;
+        flex-direction: row;
     }
 
     .main__artigospage--recomendados {

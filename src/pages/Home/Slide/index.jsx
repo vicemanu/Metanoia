@@ -26,7 +26,7 @@ export default function Slide(props) {
 
     function gerarTela() {
       let element = props.artigos[btn];
-      
+
 
       return(
         <section className="home--slide-home">

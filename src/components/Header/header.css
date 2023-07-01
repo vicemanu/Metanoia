@@ -32,11 +32,11 @@
     flex-direction: column;
 }
 
-.header__title-header h1 {
+.header__title-header > h1 {
     font-size: 3em;
 }
 
-.header__title-header p {
+.header__title-header > p {
     font-size: 1.25em;
     margin-top: 5px;
     font-family: 'Neoncity';

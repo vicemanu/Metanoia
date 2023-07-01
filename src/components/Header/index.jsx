@@ -1,6 +1,6 @@
 import Logo from '../Logo'
+import Pesquisa from '../Pesquisa'
 import './header.css'
-import Pesquisa from "../Pesquisa"
 
 export default function Header() {
     return (
