@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    user: {
-        name: "",
-    },
     data: [],
     loading: false
 }
@@ -15,12 +12,11 @@ export const userSlice = createSlice({
         createUser: (state, action) => {
             state.loading = true
         },
-        fetchUserSucess: (state, action) => {
-            // console.log(action.payload)
+        fetchDataSucess: (state, action) => {
             state.data = action.payload
             state.loading = false
         },
-        fetchUserFailure: (state, action) => {
+        fetchDataFailure: (state, action) => {
             console.log("failure")
             console.log(action.payload)
             state.loading = false
@@ -29,7 +25,7 @@ export const userSlice = createSlice({
     }
 })
 
-export const { createUser, fetchUserSucess, fetchUserFailure } = userSlice.actions;
+export const { createUser, fetchDataSucess, fetchDataFailure } = userSlice.actions;
 
 
 export default userSlice.reducer;

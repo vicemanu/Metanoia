@@ -7,61 +7,22 @@ import { useEffect, useState } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "../../firebase"
 import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { createUser } from "../../redux/user/slice"
 
 export default function Home() {
 
-    const [artigos, setArtigos] = useState([])
-    const [destaque, setDestaque] = useState([])
+    const { data, loading } = useSelector(rootReducer => rootReducer.user)
+    const dispatch = useDispatch();
 
+    const [destaque, setDestaque] = useState([])
 
     useEffect(()=> {
 
-        // Captura dos dados dos artigos
-
-        async function buscarPost() {
-            const postRef = collection(db, "artigo")
-            await getDocs(postRef)
-            .then((snapshot)=> {
-                let lista = []
-                let listaDestaque = []
-
-                snapshot.forEach((doc) => {
-                    lista.push({
-                        id: doc.id,
-                        title: doc.data().title,
-                        img: doc.data().img,
-                        text: doc.data().description,                  
-                        destaque: doc.data().destaque
-                    })
-                })
-
-                setArtigos(lista)
-
-                // separando artigos em destaque
-
-                
-
-                listaDestaque = lista.filter((e)=> {
-                    if(e.destaque) {
-                        return e
-                    }
-                },)
-
-
-                setDestaque(listaDestaque)
-
-
-            })
-            .catch((error)=> {
-                console.log(error)
-            })
+        function buscarPost() {
+            dispatch(createUser())
         }
         buscarPost()
-
-
-        
-
-
     },[])
 
 
@@ -84,20 +45,20 @@ export default function Home() {
 
     <section id="artigos">
         <h2 className="artigos--title">Artigos</h2>
-    <div className="artigos--div">
-        {
-            artigos.map((e, indice)=> {
+        <div className="artigos--div">
+            {
+                data.map((e, indice)=> {
 
-                if(indice <= 8) {
-                    return(
-                        <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
-                    )
-                }
-                
-            })
-        }
-        
-    </div>
+                    if(indice <= 8) {
+                        return(
+                            <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
+                        )
+                    }
+                    
+                })
+            }
+            
+        </div>
         <Link to={'/artigos'} className="artigos--button">Ver Mais</Link>
     </section>
 
