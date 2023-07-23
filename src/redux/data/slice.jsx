@@ -29,23 +29,14 @@ export const userSlice = createSlice({
             console.log(action.payload)
             state.loading = false
         },
-        fetchDestaque: (state, action) => {
-            state.loadingDestaque = true
-            console.log()
-        },
         fetchDestaqueSucess: (state, action) => {
             state.destaque = action.payload
-        },
-        fetchDestaqueFailure: (state, action) => {
-            console.log("failure")
-            console.log(action.payload)
-            state.loadingDestaque = false
         }
 
     }
 })
 
-export const { createData, fetchDataSucess, fetchDataFailure, fetchDestaque, fetchDestaqueSucess , fetchDestaqueFailure } = userSlice.actions;
+export const { createData, fetchDataSucess, fetchDataFailure, fetchDestaqueSucess } = userSlice.actions;
 
 
 export default userSlice.reducer;

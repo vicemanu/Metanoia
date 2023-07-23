@@ -1,5 +1,5 @@
 import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
-import { fetchDataFailure, fetchDataSucess, fetchDestaque, fetchDestaqueFailure, fetchDestaqueSucess} from './slice'
+import { fetchDataFailure, fetchDataSucess, fetchDestaqueSucess} from './slice'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase'
 
@@ -37,13 +37,8 @@ function* createData() {
                     const randomNumber = Math.floor(Math.random() * (dataDestaque.length));
                         if (!dataDestaqueSelect.includes(randomNumber)) {
                             dataDestaqueSelect.push(dataDestaque[randomNumber]);
-                            console.log(dataDestaqueSelect)
                     }
                 }
-
-
-
-
 
             yield put(fetchDestaqueSucess(dataDestaqueSelect))
         }
@@ -55,17 +50,7 @@ function* createData() {
 }
 
 
-function* fetchDestaqueEffect() {
-    try {
-
-    }
-    catch {
-
-    }
-}
-
 export default all([
-    takeLatest("data/createData", createData),
-    takeLatest("data/fetchDestaque", fetchDestaqueEffect)
+    takeLatest("data/createData", createData)
 ])
 

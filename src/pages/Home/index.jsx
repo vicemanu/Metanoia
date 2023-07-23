@@ -8,7 +8,7 @@ import { collection, getDocs } from "firebase/firestore"
 import { db } from "../../firebase"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { createData, fetchDestaque } from "../../redux/data/slice"
+import { createData} from "../../redux/data/slice"
 
 export default function Home() {
 
@@ -25,13 +25,6 @@ export default function Home() {
 
     },[])
 
-    // useEffect(()=> {
-    // if(loading) {
-    //     if(data !== []) {
-    //         dispatch(fetchDestaque())
-    //     }
-    // }
-    // },[loading])
 
   return(
     <>
