@@ -8,14 +8,13 @@ import { collection, getDocs } from "firebase/firestore"
 import { db } from "../../firebase"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { createData } from "../../redux/data/slice"
+import { createData, fetchDestaque } from "../../redux/data/slice"
 
 export default function Home() {
 
-    const { data, loading } = useSelector(rootReducer => rootReducer.data)
+    const { data, loading, destaque } = useSelector(rootReducer => rootReducer.data)
     const dispatch = useDispatch();
 
-    const [destaque, setDestaque] = useState([])
 
     useEffect(()=> {
 
@@ -23,10 +22,16 @@ export default function Home() {
             dispatch(createData())
         }
         buscarPost()
+
     },[])
 
-
-
+    // useEffect(()=> {
+    // if(loading) {
+    //     if(data !== []) {
+    //         dispatch(fetchDestaque())
+    //     }
+    // }
+    // },[loading])
 
   return(
     <>
