@@ -6,10 +6,10 @@ const initialState = {
 }
 
 export const userSlice = createSlice({
-    name: "user",
+    name: "data",
     initialState,
     reducers: {
-        createUser: (state, action) => {
+        createData: (state, action) => {
             state.loading = true
         },
         fetchDataSucess: (state, action) => {
@@ -25,7 +25,7 @@ export const userSlice = createSlice({
     }
 })
 
-export const { createUser, fetchDataSucess, fetchDataFailure } = userSlice.actions;
+export const { createData, fetchDataSucess, fetchDataFailure } = userSlice.actions;
 
 
 export default userSlice.reducer;

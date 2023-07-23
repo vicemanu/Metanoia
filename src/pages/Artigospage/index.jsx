@@ -7,39 +7,21 @@ import { useEffect, useState } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "../../firebase"
 import Header from '../../components/Header'
+import { useDispatch, useSelector } from 'react-redux'
+import { createData } from "../../redux/data/slice"
 
 export default function Artigospage() {
 
-  const [posts, setPosts] = useState([])
+  const { data, loading } = useSelector(rootReducer => rootReducer.data)
+  const dispatch = useDispatch();
 
-  
   useEffect(()=> {
-      async function buscarPost() {
-          const postRef = collection(db, "artigo")
-          await getDocs(postRef)
-          .then((snapshot)=> {
-              let lista = []
 
-              snapshot.forEach((doc) => {
-                  lista.push({
-                      id: doc.id,
-                      title: doc.data().title,
-                      img: doc.data().img,
-                      text: doc.data().description
-                  })
-              })
-
-
-              setPosts(lista)
-          })
-          .catch((error)=> {
-              console.log(error)
-          })
+      function buscarPost() {
+          dispatch(createData())
       }
       buscarPost()
   },[])
-
-
   return(
     <>
       <header className="header--artigos">
@@ -50,7 +32,7 @@ export default function Artigospage() {
           <section className='main__artigospage--todos__artigos'>
 
             {
-              posts.map((e)=> {
+              data.map((e)=> {
                   return(
                       <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
                   )

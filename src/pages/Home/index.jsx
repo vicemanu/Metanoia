@@ -8,11 +8,11 @@ import { collection, getDocs } from "firebase/firestore"
 import { db } from "../../firebase"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { createUser } from "../../redux/user/slice"
+import { createData } from "../../redux/data/slice"
 
 export default function Home() {
 
-    const { data, loading } = useSelector(rootReducer => rootReducer.user)
+    const { data, loading } = useSelector(rootReducer => rootReducer.data)
     const dispatch = useDispatch();
 
     const [destaque, setDestaque] = useState([])
@@ -20,7 +20,7 @@ export default function Home() {
     useEffect(()=> {
 
         function buscarPost() {
-            dispatch(createUser())
+            dispatch(createData())
         }
         buscarPost()
     },[])
