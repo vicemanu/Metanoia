@@ -28,7 +28,7 @@ export const { createUser } = userSlice.actions;
 export default userSlice.reducer;
 
 
-/** 
+/**  
  * consumir dados
  * const {} = useSelector(rootReducer => rootReducer.user)
  * 
