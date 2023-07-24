@@ -15,7 +15,7 @@ export default function Menu() {
             <nav>
                 <Link to={'/'}>Home</Link>
                 <Link to={'/artigos'}>Artigos</Link>
-                <Link to={'/artigo/wJUXnUO8hUYqH5tpNKs7'}>Quem Somos</Link>
+                <Link to={'/artigo/0IMNWDhkoPuCdp8kCS1A'}>Quem Somos</Link>
 
             </nav>
             <div className='menu--mobile'>
@@ -25,7 +25,7 @@ export default function Menu() {
                     <Logo/>
                     <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/'}>Home</Link>
                     <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/artigos'}>Artigos</Link>
-                    <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/artigo/wJUXnUO8hUYqH5tpNKs7'}>Quem somos</Link>
+                    <Link onClick={e => setDisplayBlock(!displayBlock)} to={'/artigo/0IMNWDhkoPuCdp8kCS1A'}>Quem somos</Link>
                 </nav>
             </div>
         </menu>

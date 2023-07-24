@@ -7,8 +7,8 @@ export default function Footer() {
 
     return (
         <footer className='footer'>
-            <Link to={'/artigo/wJUXnUO8hUYqH5tpNKs7'} className='footer--img' href="">
-            <img src="https://firebasestorage.googleapis.com/v0/b/metanoia-ad952.appspot.com/o/images%2Fglobe-3441673_1280.jpg?alt=media&token=2bf0ddb3-930d-459a-9ceb-342b91d96d48" alt="" />
+            <Link to={'/artigo/0IMNWDhkoPuCdp8kCS1A'} className='footer--img' href="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/metanoia-ad952.appspot.com/o/images%2Fdasadsa%2Fcompass-2946959_1280.jpg?alt=media&token=526814ea-b934-45ce-a84c-84c3ec25de7b" alt="" />
             </Link>
 
             <div className='footer--box_redes'>
