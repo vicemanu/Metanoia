@@ -1,11 +1,8 @@
 
 import Artigos from '../../components/Artigos'
-import Logo from '../../components/Logo'
 import './artigospage.css'
 import Recomend from '../../components/Recomend'
 import { useEffect, useState } from "react"
-import { collection, getDocs } from "firebase/firestore"
-import { db } from "../../firebase"
 import Header from '../../components/Header'
 import { useDispatch, useSelector } from 'react-redux'
 import { createData } from "../../redux/data/slice"
@@ -14,6 +11,8 @@ export default function Artigospage() {
 
   const { data, loading } = useSelector(rootReducer => rootReducer.data)
   const dispatch = useDispatch();
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(()=> {
 
@@ -22,6 +21,19 @@ export default function Artigospage() {
       }
       buscarPost()
   },[])
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem)
+
+  const totalPages = Math.ceil(data.length / itemsPerPage)
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
+
+
+
   return(
     <>
       <header className="header--artigos">
@@ -29,18 +41,34 @@ export default function Artigospage() {
             <Header/>
         </header>
         <main className='main--artigospage'>
+          
           <section className='main__artigospage--todos__artigos'>
+            
+          <div className='btn-page'>
+            {Array.from({ length: totalPages}).map((_, index) => (
+              <button key={index} onClick={()=> handlePageChange (index + 1)}>
+                {index + 1}
+              </button>
+            ))}
+          </div>
 
+          <div className='artigos--filtro'>
             {
-              data.map((e)=> {
+              currentItems.map((e)=> {
                   return(
                       <Artigos key={e.id} link={e.id} img={e.img} title={e.title} text={e.text} /> 
                   )
               })
           }
+          </div>
             
-            
-            {/** mapeamento de todos os artigos com um sistema de filtro de pesquisa */}
+          <div className='btn-page'>
+            {Array.from({ length: totalPages}).map((_, index) => (
+              <button key={index} onClick={()=> handlePageChange (index + 1)}>
+                {index + 1}
+              </button>
+            ))}
+          </div>
 
           </section>
           <section className='main__artigospage--recomendados'>

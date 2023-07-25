@@ -48,12 +48,21 @@
 
 .main__artigospage--todos__artigos {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
     padding: 20px 0px;
     margin-top: 10px;
+}
+
+.artigos--filtro {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 @media screen and (min-width: 1120px) {
@@ -67,7 +76,6 @@
 
     .main__artigospage--todos__artigos {
         width: 70%;
-        flex-direction: row;
     }
 
     .main__artigospage--recomendados {
