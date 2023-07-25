@@ -46,7 +46,7 @@ export default function Artigospage() {
             
           <div className='btn-page'>
             {Array.from({ length: totalPages}).map((_, index) => (
-              <button key={index} onClick={()=> handlePageChange (index + 1)}>
+              <button key={index} style={{color: currentPage === index + 1 ?"#39C4BD" : ""}} onClick={()=> handlePageChange (index + 1)}>
                 {index + 1}
               </button>
             ))}
