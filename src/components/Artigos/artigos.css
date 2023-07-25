@@ -1,8 +1,9 @@
 .container_artigos--box_artigo {
     width: 316px;
-    height: 420px;
+    height: 380px;
     display: block;
-    background-color: rgba(0, 0, 0, 0.849);
+    background-color: #1A1919;
+    box-shadow: 1px 3px 8px 1px #000000be;
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
@@ -10,7 +11,7 @@
 }
 
 .container_artigos--box_artigo:hover {
-    opacity: 0.85;
+    opacity: 0.75;
     transform: scale(1.01);
 }
 .box_artigo--img_artigo {
@@ -36,13 +37,20 @@
 }
 
 .box_artigo--text h3 {
+    width: 100%;
     margin-bottom: 10px;
+    color: var(--cor4);
+    font-family: var(--BeonMedium), 'Courier New', Courier, monospace;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.411);
+    padding-bottom: 6px;
+    font-size: 1.25em;
 }
 
 .box_artigo--text p  {
     width: 100%;
     height: 98px;
-    margin-bottom: 16px;
+    margin: 16px 0px;
     overflow: hidden;
+    font-family: var(--Neoncity), 'Courier New', Courier, monospace;
     
 }
