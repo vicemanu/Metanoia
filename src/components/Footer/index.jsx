@@ -7,7 +7,7 @@ export default function Footer() {
 
     return (
         <footer className='footer'>
-            <Link to={'/artigo/0IMNWDhkoPuCdp8kCS1A'} className='footer--img' href="">
+            <Link to={'/artigo/sHVCeWOUiHCw49pwmoDq'} className='footer--img' href="">
             <img src="https://firebasestorage.googleapis.com/v0/b/metanoia-ad952.appspot.com/o/images%2Fdasadsa%2Fcompass-2946959_1280.jpg?alt=media&token=526814ea-b934-45ce-a84c-84c3ec25de7b" alt="" />
             </Link>
 
