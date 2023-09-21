@@ -45,11 +45,7 @@ export default function Artigospage() {
           <section className='main__artigospage--todos__artigos'>
             
           <div className='btn-page'>
-            {Array.from({ length: totalPages}).map((_, index) => (
-              <button key={index} style={{color: currentPage === index + 1 ?"#39C4BD" : ""}} onClick={()=> handlePageChange (index + 1)}>
-                {index + 1}
-              </button>
-            ))}
+            
           </div>
 
           <div className='artigos--filtro'>
@@ -63,11 +59,7 @@ export default function Artigospage() {
           </div>
             
           <div className='btn-page'>
-            {Array.from({ length: totalPages}).map((_, index) => (
-              <button key={index} onClick={()=> handlePageChange (index + 1)}>
-                {index + 1}
-              </button>
-            ))}
+            
           </div>
 
           </section>
