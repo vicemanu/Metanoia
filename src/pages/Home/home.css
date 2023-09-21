@@ -1,20 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #artigos{
     display: flex;
     flex-direction: column;
@@ -35,6 +20,7 @@
     overflow: hidden;
     margin: 0 auto;
     gap: 20px;
+    padding-bottom: 30px;
 }
 
 .artigos--button {
